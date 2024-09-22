@@ -1,0 +1,6 @@
+CREATE TABLE usuarios (
+    nombre VARCHAR(70) NOT NULL,
+    apellido VARCHAR(70) NOT NULL,
+    telefono VARCHAR(70) NOT NULL,
+    correo VARCHAR(100) NOT NULL
+);

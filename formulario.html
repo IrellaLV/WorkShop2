@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <style>
+        /* Estilos generales para centrar el formulario */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Fondo gris claro */
+        }
+
+        /* Estilos del formulario */
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #006400; /* Verde oscuro */
+        }
+
+        /* Estilos para los labels */
+        label {
+            font-weight: bold;
+            color: #006400; /* Verde oscuro */
+            display: block;
+            margin-bottom: 5px;
+            border-radius: 8px;
+            padding: 3px;
+        }
+
+        /* Estilos para los campos de entrada */
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        /* Color verde si el campo está lleno */
+        input:valid {
+            border-color: #32CD32; /* Verde claro */
+        }
+
+        /* Color rojo si el campo está vacío */
+        input:invalid {
+            border-color: #FF6347; /* Rojo tomate */
+        }
+
+        /* Estilos para los botones */
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .btn-submit {
+            background-color: #006400; /* Verde oscuro */
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background-color: #32CD32; /* Verde claro */
+        }
+
+        .btn-cancel {
+            background-color: #FF6347; /* Rojo tomate */
+            color: white;
+        }
+
+        .btn-cancel:hover {
+            background-color: #FF4500; /* Rojo oscuro */
+        }
+    </style>
+    <script>
+        // Función para limpiar los campos del formulario
+        function cancelarFormulario() {
+            document.getElementById("nombre").value = "";
+            document.getElementById("apellido").value = "";
+            document.getElementById("telefono").value = "";
+            document.getElementById("correo").value = "";
+        }
+    </script>
+</head>
+<body>
+
+    <form action="formulario.php" method="post">
+        <h1>Registro de Usuario</h1>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" required>
+
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <input type="submit" value="Enviar" class="btn btn-submit">
+        <input type="button" value="Cancelar" class="btn btn-cancel" onclick="cancelarFormulario()">
+    </form>
+
+</body>
+</html>
+
